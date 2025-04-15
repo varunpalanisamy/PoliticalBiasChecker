@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Bias Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+        input[type="url"], textarea {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #e7f5ff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Political Bias Detector</h1>
+    <form method="POST" action="/predict">
+        <label for="url">Enter a URL:</label>
+        <input type="url" name="url" id="url" placeholder="https://example.com/news" /><br /><br />
+
+        <label for="text">Or Paste an Article Below:</label>
+        <textarea name="text" id="text" placeholder="Paste the article content here..."></textarea><br />
+
+        <button type="submit">Predict Bias</button>
+    </form>
+    {% if prediction %}
+    <div class="result">
+        <h3>{{ prediction }}</h3>
+    </div>
+    {% endif %}
+</body>
+</html>

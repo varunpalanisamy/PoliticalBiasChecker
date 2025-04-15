@@ -1,0 +1,20 @@
+# Virtual environment
+venv/
+
+# Model + vectorizer
+*.pkl
+
+# Raw data
+data/jsons/
+data/splits/
+output.csv
+preprocessed.csv
+
+# Logs, system, cache
+__pycache__/
+*.log
+.DS_Store
+
+# IDE/project config
+*.vscode/
+*.ipynb_checkpoints/
